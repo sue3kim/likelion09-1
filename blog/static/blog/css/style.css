@@ -1,0 +1,177 @@
+body {
+  font-family: 'Gowun Dodum', sans-serif;
+  text-align: center;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 30px 0 20px;
+}
+
+.new-post__button {
+  display: block;
+  margin: 20px auto;
+  width: 300px;
+  padding: 10px 20px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-out;
+}
+
+.new-post__button:hover {
+  background-color: 00796b;
+  color: #fff;
+  border-color: #BA55D3;
+}
+
+div {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0 0 5px;
+  font-weight: bold;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+#create-post {
+  display: inline-block;
+  background-color: #666;
+  border-radius: 50px;
+  color: white;
+  transition: background-color 0.3s ease-out;
+}
+
+#create-post:hover {
+  border-color: #666;
+  background-color: #BA55D3;
+}
+
+.date {
+  font-size: 0.8em;
+}
+
+.new-post {
+  margin: 0 auto 20px;
+  width: 40rem;
+  padding: 5px 15px;
+  text-align: left;
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 0;
+  width: 50rem;
+}
+
+
+/* 기본 바디 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 스타일 */
+h1 {
+    color: #333;
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+h1 img {
+    vertical-align: middle;
+    height: 50px;
+}
+
+/* 로그인, 로그아웃, 회원가입 버튼 스타일 */
+a {
+    color: #fff;
+    background-color: #E6E6FA;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+}
+
+a:hover {
+    background-color: #BA55D3;
+}
+
+/* 블로그 글 목록 스타일 */
+div {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #444;
+}
+
+/* 페이지 네비게이션 스타일 */
+span {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+span a {
+    margin: 0 10px;
+}
+
+span p {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/* 새 글 작성 버튼 스타일 */
+.new-post__button {
+    background-color: #BA55D3;
+}
+
+.new-post__button:hover {
+    background-color: #BA55D3;
+}
+/* 좋아요 버튼 스타일 */
+.like-btn {
+  display: inline-block; /* 인라인 요소로 변경 */
+  padding: 5px 10px; /* 적절한 패딩값 설정 */
+  border: none;
+  background-color: transparent;
+  color: blue; /* 버튼 색상 설정 */
+  cursor: pointer;
+}
