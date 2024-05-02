@@ -82,22 +82,31 @@ def new_comment(request, blog_id):
 from django.db.models import F
 
 def like_toggle(request, blog_id):
-    if request.method == 'POST':
-        blog = get_object_or_404(Blog, pk=blog_id)
-        user = request.user
-        try:
-            like = Like.objects.get(user=user, blog=blog)
-            like.delete()
-            blog.like_count = F('like_count') - 1  # 좋아요 개수 감소
-            liked = False
-        except Like.DoesNotExist:
-            like = Like.objects.create(user=user, blog=blog)
-            blog.like_count = F('like_count') + 1  # 좋아요 개수 증가
-            liked = True
-        blog.save()  # 좋아요 개수 업데이트
-        return JsonResponse({'liked': liked, 'like_count': blog.like_count})
+    blog = Blog.objects.get(id=blog_id)
+    if request.user in blog.likes.all():
+        blog.likes.remove(request.user)
     else:
-        return JsonResponse({'error': '잘못된 요청입니다.'}, status=400)
+        blog.likes.add(request.user)
+    
+    return JsonResponse({'like_count': blog.like_count})
+
+# def like_toggle(request, blog_id):
+#     if request.method == 'POST':
+#         blog = get_object_or_404(Blog, pk=blog_id)
+#         user = request.user
+#         try:
+#             like = Like.objects.get(user=user, blog=blog)
+#             like.delete()
+#             blog.like_count = F('like_count') - 1  # 좋아요 개수 감소
+#             liked = False
+#         except Like.DoesNotExist:
+#             like = Like.objects.create(user=user, blog=blog)
+#             blog.like_count = F('like_count') + 1  # 좋아요 개수 증가
+#             liked = True
+#         blog.save()  # 좋아요 개수 업데이트
+#         return JsonResponse({'liked': liked, 'like_count': blog.like_count})
+#     else:
+#         return JsonResponse({'error': '잘못된 요청입니다.'}, status=400)
 
 @login_required
 def profile(request):

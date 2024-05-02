@@ -12,7 +12,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='blog/', null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     tag = models.ManyToManyField('Tag', blank=True)
-    like_count = models.IntegerField(default=0)
+    likes = models.ManyToManyField(User, related_name='blog_likes')
 
     class Meta:
         db_table = 'blog'
@@ -23,6 +23,8 @@ class Blog(models.Model):
     def summary(self):
         return self.content[:100]
     
+    def like_count(self):
+        return self.likes.count()
 
 class Comment(models.Model):
     content = models.CharField(max_length=200)
